@@ -1,29 +1,17 @@
-'''
-See more here: http://www.pymolwiki.org/index.php/ccp4_ncont
-
-    ccp4_ncont -- parses CCP4/NCONT log file and selects residues and atoms.
-    http://www.ccp4.ac.uk/html/ncont.html
-
-    PARAMS
-        contactsfile
-            filename of the CCP4/NCONT contacts log file
-
-        selName1
-            the name prefix for the _res and _atom selections returned for the
-            source set of chain
-
-        selName2
-            the name prefix for the _res and _atom selections returned for the
-            target set of chain
-
-    RETURNS
-        4 selections of interface residues and atoms are created and named
-        depending on what you passed into selName1 and selName2
-
-    AUTHOR
-        Gerhard Reitmayr and Dalia Daujotyte, 2009.
-'''
 from __future__ import print_function
+
+__PYMOL_META__ = {
+    'name': 'ccp4_ncont',
+    'description': """
+        Parses CCP4/NCONT log file and selects residues and atoms.
+        http://www.ccp4.ac.uk/html/ncont.html
+    """,
+    'authors': ['Gerhard Reitmayr', 'Dalia Daujotyte'],
+    'license': 'GPL-2.0',
+    'version': '__NO_VERSION__',
+    'homepage': 'http://www.pymolwiki.org/index.php/ccp4_ncont',
+}
+
 from pymol import cmd
 import re
 
@@ -57,6 +45,31 @@ def parseNCONTContacts(f):
 
 
 def ccp4_ncont(contactsfile, selName1="source", selName2="target"):
+    '''
+    ccp4_ncont -- parses CCP4/NCONT log file and selects residues and atoms.
+
+    http://www.ccp4.ac.uk/html/ncont.html
+    http://www.pymolwiki.org/index.php/ccp4_ncont
+
+    PARAMS
+        contactsfile
+            filename of the CCP4/NCONT contacts log file
+
+        selName1
+            the name prefix for the _res and _atom selections returned for the
+            source set of chain
+
+        selName2
+            the name prefix for the _res and _atom selections returned for the
+            target set of chain
+
+    RETURNS
+        4 selections of interface residues and atoms are created and named
+        depending on what you passed into selName1 and selName2
+
+    AUTHOR
+        Gerhard Reitmayr and Dalia Daujotyte, 2009.
+    '''
     # read and parse contacts file into two lists of contact atoms and contact pair list
     s1, s2, pairs = parseNCONTContacts(open(contactsfile))
     # create a selection for the first contact list

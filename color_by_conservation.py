@@ -1,26 +1,39 @@
-'''
-See more here: http://www.pymolwiki.org/index.php/color_by_conservation
-
-    PARAMETERS
-    aln
-        (string) the alignment object name
-    names
-        (list) a list of object names that are in the alignment;
-               if (), then PyMOL will attempt to glean the names
-               from the alignment object
-    color
-        (string) valid PyMOL spectrum name
-
-    as_putty
-        (0 or 1) if 0 display is not changed, else participating objects are shown
-                 as cartoon putty, colored by the 'color' field
-'''
-
 from __future__ import print_function
+
+__PYMOL_META__ = {
+    'name': 'color_by_conservation',
+    'description': """
+        This script reads an alignment object and colors the protein objects in
+        the alignment by the sequence conservation found in the alignment. 
+    """,
+    'author': 'Jason Vertrees',
+    'license': 'Free',
+    'version': '__NO_VERSION__',
+    'homepage': 'http://www.pymolwiki.org/index.php/color_by_conservation',
+}
+
 from pymol import cmd
 
 
 def color_by_conservation(aln, names=(), color="rainbow", as_putty=0, _self=cmd):
+    '''
+    Reads an alignment object and colors the protein objects in the alignment
+    by the sequence conservation found in the alignment.
+
+    PARAMETERS
+        aln
+            (string) the alignment object name
+        names
+            (list) a list of object names that are in the alignment;
+                   if (), then PyMOL will attempt to glean the names
+                   from the alignment object
+        color
+            (string) valid PyMOL spectrum name
+
+        as_putty
+            (0 or 1) if 0 display is not changed, else participating objects are shown
+                     as cartoon putty, colored by the 'color' field
+    '''
     # PyMOL doesn't yet know about object:alignment
     # but we need to check that this exists or we might crash
     if _self.get_type(aln) not in ("object:", "object:alignment"):

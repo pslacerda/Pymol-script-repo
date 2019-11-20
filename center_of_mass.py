@@ -1,24 +1,30 @@
-'''
-See more here: http://www.pymolwiki.org/index.php/center_of_mass
-
-DESCRIPTION
-
-   Places a pseudoatom at the center of mass
-
-   Author: Sean Law
-   Michigan State University
-   slaw (at) msu . edu
-
-SEE ALSO
-
-   pseudoatom, get_com
-'''
-
 from __future__ import print_function
+
+__PYMOL_META__ = {
+    'name': 'center_of_mass',
+    'description': "Places a pseudoatom at the center of mass.",
+    'author': 'Sean Law',
+    'version': '__NO_VERSION__',
+    'email': 'slaw@msu.edu',
+    'homepage': 'http://www.pymolwiki.org/index.php/center_of_mass',
+    'comments': """
+        Developed at Michigan State University
+    """
+}
+
+# TODO: ?????????? author is Sean or Henschel???????????
+
 from pymol import cmd
 
 
 def com(selection, state=None, mass=None, object=None, quiet=1, **kwargs):
+    """
+    DESCRIPTION
+        Places a pseudoatom at the center of mass.
+
+    SEE ALSO
+        get_com, pseudoatom
+    """
     quiet = int(quiet)
     if (object == None):
         try:
@@ -42,18 +48,14 @@ def com(selection, state=None, mass=None, object=None, quiet=1, **kwargs):
             cmd.pseudoatom(object, pos=[x, y, z], state=i + 1, **kwargs)
             cmd.show("spheres", 'last ' + object)
 
-cmd.extend("com", com)
-
 
 def get_com(selection, state=1, mass=None, quiet=1):
     """
- DESCRIPTION
+    DESCRIPTION
+        Calculates the center of mass.
 
-    Calculates the center of mass
-
-    Author: Sean Law
-    Michigan State University
-    slaw (at) msu . edu
+    SEE ALSO
+        com, pseudoatom
     """
     quiet = int(quiet)
 
@@ -81,6 +83,8 @@ def get_com(selection, state=1, mass=None, quiet=1):
     else:
         return x / len(model.atom), y / len(model.atom), z / len(model.atom)
 
+
+cmd.extend("com", com)
 cmd.extend("get_com", get_com)
 
 # vi:expandtab:sw=3

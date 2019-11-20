@@ -1,20 +1,24 @@
-'''
-(c) 2010-2011 Thomas Holder, MPI for Developmental Biology
-
-Python parser for AAindex: Amino Acid Index Database
-http://www.genome.jp/aaindex/
-
-PyMOL commands:
-
-    aaindex2b
-    pmf
-'''
-
 from __future__ import print_function
 from __future__ import absolute_import
 
+__PYMOL_META__ = {
+    'name': 'aaindex',
+    'description': """
+        Python parser for AAindex: Amino Acid Index Database
+            http://www.genome.jp/aaindex/
+        Provide the following commands: aaindex2b, pmf
+    """,
+    'author': 'Thomas Holder',
+    'copyright': '(c) 2010-2011 Thomas Holder, MPI for Developmental Biology',
+    'license': 'BSD-2-Clause',
+    'version': '__NO_VERSION__',
+    'email': 'thomas.holder@schrodinger.com',
+    'homepage': 'https://pymolwiki.org/index.php/AAindex',
+}
+
 import sys
 import os
+
 
 _aaindex = dict()
 _pymol_auto_arg_update = lambda: None

@@ -1,28 +1,14 @@
-'''
-See more here: http://www.pymolwiki.org/index.php/ccp4_contact
-
-    ccp4_contact -- parses CCP4/CONTACT log file and selects residues and atoms.
-    http://www.ccp4.ac.uk/html/contact.html
- 
-    PARAMS
-        contactsfile
-            filename of the CCP4/CONTACT log file
- 
-        selName1
-            the name prefix for the _res and _atom selections returned for the
-            source set of chain
- 
-        selName2
-            the name prefix for the _res and _atom selections returned for the 
-            target set of chain
- 
-    RETURNS
-        4 selections of interface residues and atoms are created and named
-        depending on what you passed into selName1 and selName2
-
-    AUTHOR
-        Gerhard Reitmayr and Dalia Daujotyte, 2011.
-'''
+__PYMOL_META__ = {
+    'name': 'ccp4_contact',
+    'description': """
+        Parses CCP4/CONTACT log file and selects residues and atoms.
+        http://www.ccp4.ac.uk/html/contact.html
+    """,
+    'authors': ['Gerhard Reitmayr', 'Dalia Daujotyte'],
+    'license': 'GPL-2.0',
+    'version': '__NO_VERSION__',
+    'homepage': 'http://www.pymolwiki.org/index.php/ccp4_contact',
+}
 from pymol import cmd
 import re
 
@@ -46,6 +32,27 @@ def parseCONTACTContacts(f):
 
 
 def ccp4_contact(contactsfile, selName1="source", selName2="target"):
+    """
+    ccp4_contact -- parses CCP4/CONTACT log file and selects residues and atoms.
+
+    http://www.ccp4.ac.uk/html/contact.html
+
+    PARAMS
+        contactsfile
+            filename of the CCP4/CONTACT log file
+
+        selName1
+            the name prefix for the _res and _atom selections returned for the
+            source set of chain
+
+        selName2
+            the name prefix for the _res and _atom selections returned for the
+            target set of chain
+
+    RETURNS
+        4 selections of interface residues and atoms are created and named
+        depending on what you passed into selName1 and selName2
+    """
     # read and parse contacts file into two lists of contact atoms and contact pair list
     s1, s2 = parseCONTACTContacts(open(contactsfile))
 

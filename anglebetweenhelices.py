@@ -1,6 +1,13 @@
-'''
-(c) 2010 Thomas Holder
-'''
+__PYMOL_META__ = {
+    'name': 'anglebetweenhelices',
+    'author': 'Thomas Holder',
+    'copyright': '(c) 2010 Thomas Holder',
+    'license': 'BSD-2-Clause',
+    'version': '__NO_VERSION__',
+    'email': 'thomas.holder@schrodinger.com',
+    'homepage': 'https://pymolwiki.org/index.php/AngleBetweenHelices',
+}
+
 
 from pymol import cmd, stored, CmdException
 from chempy import cpv

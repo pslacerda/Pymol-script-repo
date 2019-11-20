@@ -1,18 +1,17 @@
-'''
-Described at PyMOL wiki:
-http://www.pymolwiki.org/index.php/aAKMT_Lys_pred
+__PYMOL_META__ = {
+    'name': 'aKMT_Lys_pred',
+    'description': 'Help predicting lysine methylation',
+    'author': 'Troels Schwarz-Linnet',
+    'version': '__NO_VERSION__',
+    'homepage': 'http://www.pymolwiki.org/index.php/aAKMT_Lys_pred',
+}
 
-Authors : Troels Schwarz-Linnet
-Program : aKMT_Lys_pred
-Date    : June 2017
-
-aKMT_Lys_pred -- Help predicting lysine methylation
-'''
 # Internal pymol import
 from pymol import cmd
 from pymol import stored
 # From Pymol-script repo: https://pymolwiki.org/index.php/Findseq
 import findseq
+
 
 aa_1_3 = {'A': 'ALA', 'C': 'CYS', 'D': 'ASP', 'E': 'GLU', 'F': 'PHE', 'G': 'GLY', 'H': 'HIS', 'I': 'ILE', 'K': 'LYS',
             'L': 'LEU', 'M': 'MET', 'N': 'ASN', 'P': 'PRO', 'Q': 'GLN', 'R': 'ARG', 'S': 'SER', 'T': 'THR', 'V': 'VAL',

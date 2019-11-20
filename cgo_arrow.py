@@ -1,10 +1,13 @@
-'''
-http://pymolwiki.org/index.php/cgo_arrow
-
-(c) 2013 Thomas Holder, Schrodinger Inc.
-
-License: BSD-2-Clause
-'''
+__PYMOL_META__ = {
+    'name': 'cgo_arrow',
+    'description': "Create a CGO arrow between two picked atoms.",
+    'author': 'Thomas Holder',
+    'copyright': '(c) 2013 Thomas Holder, Schrodinger Inc',
+    'license': 'BSD-2-Clause',
+    'version': '__NO_VERSION__',
+    'email': 'thomas.holder@schrodinger.com',
+    'homepage': 'http://pymolwiki.org/index.php/cgo_arrow',
+}
 
 from pymol import cmd, cgo, CmdException
 

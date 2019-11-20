@@ -1,17 +1,3 @@
-'''
-See more here: http://www.pymolwiki.org/index.php/centroid
-
-DESCRIPTION
-        get the centroid (geometric center) of a selection or move selection to the origin.
-
-ARGUMENTS
-        selection = string: a valid PyMOL selection {default: all}
-        center = 0 or 1: if center=1 center the selection {default: 0}
-        returns: centroid: [ x, y, z ]
-
-SEE ALSO
-        get_extent, get_position, http://pymolwiki.org/index.php/Center_Of_Mass
-
 # @AUTHOR: Jason Vertrees
 # Copyright (c) 2008, Jason Vertrees
 # All rights reserved.
@@ -36,15 +22,37 @@ SEE ALSO
 # DATE  : 2008-09-26
 # REV   : 1
 
-'''
 from __future__ import print_function
+
+__PYMOL_META__ = {
+    'name': 'centroid',
+    'description': "Get the centroid (geometric center) of a selection or move selection to the origin.",
+    'author': 'Jason Vertrees',
+    'copyright': '(c) 2008, Jason Vertrees',
+    'license': 'BSD-2-Clause',
+    'version': '2008-09-26',
+    'homepage': 'http://www.pymolwiki.org/index.php/centroid',
+}
 from pymol import cmd
 from pymol import stored
 from chempy import cpv
 
 
 def centroid(selection='all', center=0, quiet=1):
+    '''
+    DESCRIPTION
+            get the centroid (geometric center) of a selection or move selection to the origin.
+            http://www.pymolwiki.org/index.php/centroid
 
+    ARGUMENTS
+            selection = string: a valid PyMOL selection {default: all}
+            center = 0 or 1: if center=1 center the selection {default: 0}
+            returns: centroid: [ x, y, z ]
+
+    SEE ALSO
+            get_extent, get_position, http://pymolwiki.org/index.php/Center_Of_Mass
+
+    '''
     model = cmd.get_model(selection)
     nAtom = len(model.atom)
 

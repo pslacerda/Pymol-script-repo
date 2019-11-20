@@ -1,10 +1,12 @@
-'''
-http://pymolwiki.org/index.php/B2transparency
-
-(c) 2012 Thomas Holder
-
-License: BSD-2-Clause
-'''
+__PYMOL_META__ = {
+    'name': 'b2transparency',
+    'author': 'Thomas Holder',
+    'copyright': '(c) 2012 Thomas Holder',
+    'license': 'BSD-2-Clause',
+    'version': '__NO_VERSION__',
+    'email': 'thomas.holder@schrodinger.com',
+    'homepage': 'http://pymolwiki.org/index.php/B2transparency',
+}
 
 from pymol import cmd, CmdException
 

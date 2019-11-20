@@ -1,16 +1,13 @@
-'''
-http://pymolwiki.org/index.php/bbPlane
-
-Draws a CGO plane across the backbone atoms of neighboring amino acids
-
-Author: Jason Vertrees, 06/2010
-  Modified by Thomas Holder, 2010-2012
-  Modified by Blaine Bell, 08/2011
-
-(c) 2010 Schrodinger
-
-License: MIT
-'''
+__PYMOL_META__ = {
+    'name': 'bbPlane',
+    'description': "Draws a CGO plane across the backbone atoms of neighboring amino acids",
+    'authors': ['Jason Vertrees', 'Blaine Bell', 'Thomas Holder'],
+    'copyright': '(c) 2010 Schrodinger',
+    'license': 'MIT',
+    'version': '__NO_VERSION__',
+    'email': 'thomas.holder@schrodinger.com',
+    'homepage': 'http://pymolwiki.org/index.php/bbPlane',
+}
 
 from pymol import cmd
 

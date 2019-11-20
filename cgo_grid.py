@@ -1,24 +1,22 @@
-'''
-This PyMOL module is described at: http://www.pymolwiki.org/Cgo_grid
-################################################################################
-
-Author : Andreas Warnecke
-email: 4ndreas.warneck3@gmail.com
-Date: June 2014
-License: pending...
-Citation: pending...
-Version: 1.0
-
-Module contributed by Andreas Warnecke
-(andreas.warnecke@ki.se, 4ndreas.warneck3@gmail.com)
-
-Feel free to contact me in case of feedback (suggestions/comments) or questions.
-
-cgo_grid renders a mesh-like grid with overlapping sine waves (cf. examples).
-
-################################################################################
-'''
 from __future__ import print_function
+
+__PYMOL_META__ = {
+    'name': 'aaindex',
+    'description': "cgo_grid renders a mesh-like grid with overlapping sine waves.",
+    'author': 'Andreas Warnecke',
+    'version': '01/06/2014',
+    'license': 'BSD-2-Clause',
+    'email': '4ndreas.warneck3@gmail.com',
+    'homepage': 'https://pymolwiki.org/index.php/Cgo_grid',
+    'comments': """
+        Module contributed by Andreas Warnecke
+            (andreas.warnecke@ki.se, 4ndreas.warneck3@gmail.com)
+        
+        Feel free to contact me in case of feedback (suggestions/comments) or questions.    
+    """
+}
+
+
 from pymol import cmd
 from pymol import stored
 from pymol.cgo import *
